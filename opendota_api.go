@@ -14,7 +14,7 @@ type RecentMatches struct {
 	GameMode     int         `json:"game_mode"`
 	LobbyType    int         `json:"lobby_type"`
 	HeroID       int         `json:"hero_id"`
-	StartTime    int         `json:"start_time"`
+	StartTime    int64       `json:"start_time"`
 	Version      interface{} `json:"version"`
 	Kills        int         `json:"kills"`
 	Deaths       int         `json:"deaths"`
@@ -34,7 +34,7 @@ type RecentMatches struct {
 	PartySize    interface{} `json:"party_size"`
 }
 
-func GetRecentMatches(playerId int) []RecentMatches {
+func GetRecentMatches(playerId int64) []RecentMatches {
 	// Do API call
 	resp, err := http.Get(fmt.Sprintf("https://api.opendota.com/api/players/%d/recentMatches", playerId))
 

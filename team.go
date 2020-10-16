@@ -9,7 +9,7 @@ import (
 
 type TeamMember struct {
 	Name string `json:"name"`
-	Id   int32  `json:"userid"`
+	Id   int64  `json:"userid"`
 }
 
 type Team struct {
